@@ -14,16 +14,16 @@ Create a two-tier application using WordPress and MySQL orchestrated with Kubern
 
 1.Clone the repository:
    ```bash
-   git clone https://github.com/Abhay956/multi-tier-in-kubernetes-using-terraform.git
-   cd multi-tier-in-kubernetes-using-terraform/
+git clone https://github.com/Abhay956/multi-tier-in-kubernetes-using-terraform.git
+cd multi-tier-in-kubernetes-using-terraform/
 ```
 If terraform not install then run this script:
 ```bash
-  sh terraform.install.sh
+sh terraform.install.sh
 ```
 Install necessary provider plugins:
 ```bash
-  terraform init
+terraform init
 ```
 Use the following command to obtain your Kubernetes credentials:
 ```bash
