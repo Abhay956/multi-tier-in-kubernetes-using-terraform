@@ -26,7 +26,7 @@ resource "kubernetes_deployment" "wp" {
 ##In WORDPRESS_DB_HOST Enter Your Mysql Pod IP Address
           env {
             name  = "WORDPRESS_DB_HOST"
-            value = "192.168.1.7"
+            value = "scalable-db-example"
           }
           env {
             name  = "WORDPRESS_DB_USER"
