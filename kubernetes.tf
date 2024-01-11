@@ -23,6 +23,7 @@ resource "kubernetes_deployment" "wp" {
         container {
           image = "wordpress"
           name  = "example"
+##In WORDPRESS_DB_HOST Enter Your Mysql Pod IP Address
           env {
             name  = "WORDPRESS_DB_HOST"
             value = "192.168.1.7"
