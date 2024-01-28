@@ -128,4 +128,18 @@ resource "kubernetes_service" "wp-service" {
     type = "NodePort"
   }
 }
+resource "kubernetes_service" "db-service" {
+  metadata {
+    name = "dbexample"
+  }
+  spec {
+    selector = {
+      App = kubernetes_deployment.db.spec.0.template.0.metadata[0].labels.App
+    }
+    port {
+      port        = 3306
+      target_port = 3306
+    }
 
+  }
+}
