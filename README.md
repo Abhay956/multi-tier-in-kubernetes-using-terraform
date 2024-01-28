@@ -46,13 +46,7 @@ localhost:30201
 ```
 ![image](https://github.com/Abhay956/multi-tier-in-kubernetes-using-terraform/assets/132220412/63a52dc3-4bf9-49bc-8f48-d5bbc7837a34)
 
-If you get an error, don't panic. You may just need to make a small change in the kubernetes.tf file on line 28. Change "scalable-db-example" to the pod IP address so that WordPress will communicate directly with the database using the database pod IP address.
-![image](https://github.com/Abhay956/multi-tier-in-kubernetes-using-terraform/assets/132220412/2d807dc3-b734-4211-a4b5-aa70ea9ba6bd)
-to get ip address
-```bash
-kubectl get pod -o wide 
-```
-if you change file content then apply again 
-```bash
-terraform apply --auto-approve
-```
+
+## Lab link
+👩‍💻 https://killercoda.com/killer-shell-cka/scenario/playground 
+
