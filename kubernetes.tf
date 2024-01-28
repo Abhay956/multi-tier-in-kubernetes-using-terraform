@@ -23,10 +23,9 @@ resource "kubernetes_deployment" "wp" {
         container {
           image = "wordpress"
           name  = "example"
-##In WORDPRESS_DB_HOST Enter Your Mysql Pod IP Address
           env {
             name  = "WORDPRESS_DB_HOST"
-            value = "scalable-db-example"
+            value = "scalable-db-example" ##In "scalable-db-example" Enter Your Mysql Pod IP Address
           }
           env {
             name  = "WORDPRESS_DB_USER"
