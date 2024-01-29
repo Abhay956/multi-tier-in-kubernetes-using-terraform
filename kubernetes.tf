@@ -85,7 +85,7 @@ resource "kubernetes_deployment" "db" {
           name  = "example"
       	volume_mount {
         	name  	= "test"
-        	mount_path = "/var/lib/mysql"
+        	mount_path = "/data-store"
       	}
 
 
