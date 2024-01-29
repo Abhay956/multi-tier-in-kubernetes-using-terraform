@@ -26,12 +26,6 @@ Install necessary provider plugins:
 ```bash
 terraform init
 ```
-Use the following command to obtain your Kubernetes credentials:
-```bash
-kubectl config view --minify --flatten 
-```
- Add the obtained Kubernetes credentials to the terraform.tfvars file.
-
 To provision the infrastructure, run: 
 ```bash
 terraform plan
