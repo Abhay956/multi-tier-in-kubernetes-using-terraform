@@ -17,9 +17,10 @@ Create a two-tier application using WordPress and MySQL orchestrated with Kubern
 git clone https://github.com/Abhay956/multi-tier-in-kubernetes-using-terraform.git
 cd multi-tier-in-kubernetes-using-terraform/
 ```
-If terraform not install then run this script:
+If terraform not install then run this script and run nfs script to install nfs-server:
 ```bash
 sh terraform.install.sh
+sh nfs-install.sh
 ```
 Install necessary provider plugins:
 ```bash
