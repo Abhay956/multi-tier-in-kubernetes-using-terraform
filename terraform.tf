@@ -2,8 +2,14 @@ terraform {
   required_providers {
     kubernetes = {
       source = "hashicorp/kubernetes"
+      version = "2.25.2"
     }
   }
+}
+
+provider "kubernetes" {
+  config_path    = "~/.kube/config"
+  config_context = "my-context"
 }
 
 variable "host" {
@@ -22,11 +28,5 @@ variable "cluster_ca_certificate" {
   type = string
 }
 
-provider "kubernetes" {
-  host = var.host
 
-  client_certificate     = base64decode(var.client_certificate)
-  client_key             = base64decode(var.client_key)
-  cluster_ca_certificate = base64decode(var.cluster_ca_certificate)
-}
 
