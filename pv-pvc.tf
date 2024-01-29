@@ -26,7 +26,7 @@ resource "kubernetes_persistent_volume" "example" {
 	access_modes = ["ReadWriteMany"]
 	persistent_volume_source {
 	nfs {
-    	path = "/var/lib/mysql"
+    	path = "/data-store"
     	server = "controlplane"
     	}
  	}
