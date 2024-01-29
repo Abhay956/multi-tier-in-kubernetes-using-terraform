@@ -83,6 +83,12 @@ resource "kubernetes_deployment" "db" {
         container {
           image = "mysql:5.7"
           name  = "example"
+      	volume_mount {
+        	name  	= "test"
+        	mount_path = "/data-store"
+      	}
+
+
           env {
             name  = "MYSQL_ROOT_PASSWORD"
             value = "centos"
@@ -106,10 +112,18 @@ resource "kubernetes_deployment" "db" {
             }
           }
         }
+  volume {
+        name = "test"
+        persistent_volume_claim {
+          claim_name = "exampleclaimname"
+        }
+        }
+}
       }
     }
   }
-}
+
+
 
 resource "kubernetes_service" "wp-service" {
   metadata {
