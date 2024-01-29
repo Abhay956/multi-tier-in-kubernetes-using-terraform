@@ -15,18 +15,18 @@ if is_rhel; then
     echo "Detected Red Hat Enterprise Linux"
     # Run RHEL commands
    sudo dnf install rpcbind nfs-utils -y
-   sudo mkdir /data-store
-   sudo chmod 777 /data-store
-   sudo echo "/data-store *(rw,sync)" > /etc/exports
+   sudo mkdir /var/lib/mysql
+   sudo chmod 777 /var/lib/mysql
+   sudo echo "/var/lib/mysql *(rw,sync)" > /etc/exports
    sudo systemctl restart nfs-server
    sudo exportfs -avr
 elif is_ubuntu; then
     echo "Detected Ubuntu"
     # Run Ubuntu commands
    sudo apt install nfs-kernel-server -y
-   sudo mkdir /data-store
-   sudo chmod 777 /data-store
-   sudo echo  "/data-store *(rw,sync)" > /etc/exports
+   sudo mkdir /var/lib/mysql
+   sudo chmod 777 /var/lib/mysql
+   sudo echo  "/var/lib/mysql *(rw,sync)" > /etc/exports
    sudo systemctl restart nfs-kernel-server
    sudo exportfs -avr
    sudo ssh node01 apt install nfs-common -y
