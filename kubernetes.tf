@@ -115,7 +115,7 @@ resource "kubernetes_deployment" "db" {
   volume {
         name = "test"
         persistent_volume_claim {
-          claim_name = "exampleclaimname"
+          claim_name = "${var.pvc-name}"
         }
         }
 }

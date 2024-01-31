@@ -1,6 +1,6 @@
 resource "kubernetes_persistent_volume_claim" "example" {
   metadata {
-	name = "exampleclaimname"
+	name = "${var.pvc-name}"
   }
   spec {
 	storage_class_name = "manual"
@@ -10,13 +10,13 @@ resource "kubernetes_persistent_volume_claim" "example" {
     	storage = "5Gi"
   	}
 	}
-	volume_name = "examplevolumename"
+	volume_name = "${var.pv-name}"
   }
 }
 
 resource "kubernetes_persistent_volume" "example" {
   metadata {
-	name = "examplevolumename"
+	name = "${var.pv-name}"
   }
   spec {
 	storage_class_name = "manual"
